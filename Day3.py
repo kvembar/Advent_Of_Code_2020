@@ -15,7 +15,7 @@ column = 0
 row = 0
 right_shift = 3
 down_shift = 1 #How much the toboggan will move right and down each iteration
-
+#The example provided here is equivalent to Part 1
 tree_count = 0
 
 while row <= len(trees)-1: #<= is used instead of != due to the down 2 case skipping the final row.
@@ -28,4 +28,4 @@ while row <= len(trees)-1: #<= is used instead of != due to the down 2 case skip
 print(tree_count)
 #By modifying right_shift and down_shift to specifications, you can find the number of trees
 #Using 1,1 3,1 5,1 7,1 1,2 and multiplying them together
-#You should get 234, 79, 72, 91, and 48 non-respectively as answers.
+#You should get 234, 79, 72, 91, and 48 (non-respectively) as answers.

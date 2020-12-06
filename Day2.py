@@ -33,7 +33,7 @@ with open("Day_2_input.txt","r") as file:
         index_2 = int(limits[1])-1
         
         A = (info[2][index_1] == info[1]) #A and B are either true or false
-        B = (info[2][index_2] == info[1]) #Sees if characters match
+        B = (info[2][index_2] == info[1]) #Sees if characters match. Regex would be better, but I suck at this :(
 
         if ((not A) and B) or (A and (not B)): #XOR gate, as only 1 match is allowed
             count += 1
