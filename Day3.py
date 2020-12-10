@@ -15,14 +15,14 @@ column = 0
 row = 0
 right_shift = 3
 down_shift = 1 #How much the toboggan will move right and down each iteration
-#The example provided here is equivalent to Part 1
+#The example provided here is equivalent to Part 1, with right_shift 3 and down_shift 1
 tree_count = 0
 
 while row <= len(trees)-1: #<= is used instead of != due to the down 2 case skipping the final row.
     if trees[row][column] == "#":
         tree_count += 1
     row += down_shift
-    column = (column+right_shift)%(len(trees[0])-1) #The power of wraparound.
+    column = (column+right_shift)%(len(trees[0])-1) #The power of wraparound. Subtract one, since \n is still in there.
 
 
 print(tree_count)
