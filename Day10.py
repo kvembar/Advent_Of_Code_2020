@@ -7,7 +7,7 @@ with open("Day_10_input.txt","r") as f:
     for line in f:
         jolts.append(int(line.rstrip("\n")))
 
-#Part 1 (Different and MUCH less complicated than the one I used to solve Day 10)
+#Part 1 (Different and MUCH less complicated than the one I initially used to solve Day 10)
 #The original code did not rely on sorted(jolts). You can probably see why I improved it.
 
 ordered = [0] + sorted(jolts) #Added zero to account for starting jump
@@ -23,8 +23,8 @@ print(gaps.count(1) * (gaps.count(3)+1))
 #Part 2
 #Note: If your input has even a single jump of 2, this solution is null and void. Mine had only jumps of 1 and 3.
 
-runs = [] #A 'run' is defined as a chain of adapters with 1-jolt differences. 3-jolt differences delimited each run. This is a list of lists of runs
-to_add = [0] #to_add is the array of runs that will be added. Starts at zero for the same reason as adding zero above.
+runs = [] #A 'run' is defined as a chain of adapters with 1-jolt differences. 3-jolt differences delimit each run. This is a list of lists of runs
+to_add = [0] #to_add is the array of runs that will be added. Starts at zero for the same reason as adding zero in line 13.
 
 for i in ordered:
     if i-to_add[-1] == 1:
@@ -43,13 +43,13 @@ for i in runs:
     n = len(i)
     combo = 2**(n-2)-(n-4)*(2**(n-5))+(n-5)*(2**(n-6))
     poss.append(round(combo))
-    #Oh boy, this one has a long explanation. See Note_10.pdf in this repo. Warning: Involves some pure/applied combination math.
+    #Oh boy, this one has a long explanation. See Note_10.pdf in this repo. Warning: Involves some pure/applied math.
     #This section of the code is why the 'no jump 2' rule exists.
     #This is the only cool thing I'll do in this competition. Then again, maybe this isn't cool.
 
 prod = 1
 for i in poss:
-    prod *= i #Multiplying the possibilities with each other.
+    prod *= i #Multiplying the possibilities of each run with each other.
 
 print(prod) #You should get a whopping 4,049,565,169,664 combinations from my input. At least you have options with your adapters!
 
