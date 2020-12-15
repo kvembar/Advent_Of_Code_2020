@@ -4,7 +4,7 @@
 order = [0,5,4,1,10,14,7] #My input, for the first time NOT IN A SEPARATE FILE!
 index = 6 #Current number to analyze
 
-first_occurences = {} #The latest occurance of a number and where it is.
+first_occurences = {} #The latest occurrence of a number and where it is.
 
 for ind, i in enumerate(order):
     first_occurences[i] = ind #Takes in occurences of numbers in input already
