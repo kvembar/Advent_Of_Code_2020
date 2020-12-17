@@ -50,4 +50,4 @@ for i in seats:
 #Fun Fact: This part 2 code was not necessary for me.
 #I solved it by visual inspection of sorted(ids) and finding the missing number.
 #Bad, Keshav, bad!
-#for the edge. The code above shows how I should've done it.
+#The code above shows how I should've done it.
