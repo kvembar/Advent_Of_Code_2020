@@ -22,36 +22,37 @@ with open("Day_22_input.txt","r") as f:
              player2.append(int(line.rstrip("\n")))
 
 def war(my_deck, crabs):
-    decks_plaid = []
+    decks_plaid = set()
     while True:
-        print(f"current hand: {my_deck}, {crabs}\n")
+        #print(f"current hand: {my_deck}, {crabs}\n")
         if my_deck == []:
-            print("player 1 ran out of cards\n")
+            #print("player 1 ran out of cards\n")
             winner = "player2"
             break
 
         elif crabs == []:
-            print("player2 ran out of cards\n")
+            #print("player2 ran out of cards\n")
             winner = "player1"
             break
-
-        if [my_deck, crabs] in decks_plaid:
-            print(f"current hand: {my_deck}, {crabs}\n")
-            print(f"current deck has appeared before in {decks_plaid}")
+        
+        if (tuple(my_deck), tuple(crabs)) in decks_plaid:
+            #print(f"current hand: {my_deck}, {crabs}\n")
+            #print(f"current deck has appeared before in {decks_plaid}")
             winner = "player1"
             break
-
-        decks_plaid.append([[i for i in my_deck], [i for i in crabs]])
+        else:
+            decks_plaid.add((tuple(my_deck), tuple(crabs)))
+        
         my_card = my_deck.pop(0)
         crab_card = crabs.pop(0)
 
-        if ((len(my_deck)>my_card) and (len(crabs)>crab_card)):
-            print(f"Recursion entered: {my_card}, {crab_card}\n")
+        if ((len(my_deck)>=my_card) and (len(crabs)>=crab_card)):
+            #print(f"Recursion entered: {my_card}, {crab_card}\n")
             player_1_wins = ("player1" == war([i for i in my_deck], [i for i in crabs]))
         else:
             player_1_wins = my_card>crab_card
-            print(f"Did player 1 win: {player_1_wins}\n")
-
+            #print(f"Did player 1 win: {player_1_wins}\n")
+        
         if player_1_wins:
             my_deck += [my_card, crab_card]
             winner = "player1"
