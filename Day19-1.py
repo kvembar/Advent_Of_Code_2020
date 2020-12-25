@@ -86,7 +86,7 @@ for key in rule_trace: #This is why rule_trace was built the way it was. So that
 madlad = combo_path['0'] #I felt like one after the code executed properly.
 count = 0
 for i in messages: #This for loop is why the execution time is so long. Every thing before takes less than 1/4 of a sec to execute! (verified via print statements)
-    if len(i) != 24: #Minor optimization due to my code's quirks. May not work for yours.
+    if len(i) != 24: #Minor optimization due to my input's quirks. May not work for yours. As it turns out, all possible messages for rule 0 are all of length 24.
         continue
     if i in madlad:
         count += 1 #If a valid combo, add 1 to count.

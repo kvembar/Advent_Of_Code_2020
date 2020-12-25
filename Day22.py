@@ -3,7 +3,7 @@
 #This program is the product of sweat, quite a lot of tears, and a Pacific Ocean of blood. You'll see why.
 
 #Important Note: You'll see some triple quotes in the code below. With them, you have Part 1.
-#Take out the triple quotes and indent the line immediately after for Part 2's code.
+#Take out the triple quotes and indent the line immediately after the second block of triple quotes for Part 2's code.
 
 with open("Day_22_input.txt","r") as f:
      player1 = []

@@ -59,4 +59,4 @@ while parsed[0] != 0:
     parsed = parsed[1:] + [parsed[0]]
 
 print(parsed[1]*parsed[2]) #Same explanation as Part 1. I used Part 1 to test my optimizations, which is why the code for both are nigh-identical.
-#Should get 519044017360 as the answer.
+#Should get 519044017360 as the answer. Well, if you have the patience and the ice packs that is.
